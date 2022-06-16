@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-function Popular({ id, coverImage, title, summary, genres, year }) {
+function Romance({ id, coverImage, title, summary, genres, year }) {
   const [modal, setModal] = useState(false);
   const showModal = () => {
     setModal(true);
@@ -43,11 +43,11 @@ function Popular({ id, coverImage, title, summary, genres, year }) {
   );
 }
 
-Popular.propTypes = {
+Romance.propTypes = {
   id: PropTypes.number.isRequired,
   coverImage: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
   genres: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
-export default Popular;
+export default Romance;

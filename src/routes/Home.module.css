@@ -5,12 +5,16 @@
     font-style: normal;
 }
 
+.wrap {
+    padding-bottom: 100px;
+}
+
 .inner {
     padding-left: 3%;
 }
 
 .top_rank {
-    padding-top: 100px;
+    padding-top: 50px;
     font-family: 'OKCHAN';
-    color: tomato;
+    color: #fff;
 }
