@@ -1,0 +1,49 @@
+.bgItem {
+    position: relative;
+    min-height: calc(100vh - 56px);
+    padding-top: 100px;
+}
+
+.bgItem::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    content: '';
+    z-index: 2;
+}
+
+.bgItemImg {
+    position: absolute;
+    left: 50%;
+    min-width: 100%;
+    height: 100%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.bgCont {
+    position: relative;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.moviePhoto {
+    width: 50%;
+    text-align: center;
+}
+
+.moviePhoto img {
+    max-height: 500px;
+}
+
+.movieCont {
+    padding-left: 50px;
+    width: 50%;
+}

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-function Movie({ id, coverImage, title, summary, genres, year }) {
+function Movie({ id, coverImage, smallImage, title, summary, genres, year }) {
   const [modal, setModal] = useState(false);
   const showModal = () => {
     setModal(true);
@@ -25,7 +25,7 @@ function Movie({ id, coverImage, title, summary, genres, year }) {
           <button className={style.close} onClick={hideModal}>
             <FontAwesomeIcon icon={faXmark} />
           </button>
-          <img src={coverImage} alt={title} className={style.titleImg} />
+          <img src={smallImage} alt={title} className={style.titleImg} />
           <p className={style.summary}>
             {summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}
           </p>

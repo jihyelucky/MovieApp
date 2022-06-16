@@ -11,8 +11,10 @@ function Home() {
     Thriller: "genre=thriller",
   };
   const Group_key_arr = Object.keys(Group_obj);
+
   return (
     <div className={styles02.wrap}>
+      <div className={styles02.BgItem}></div>
       <div>
         <Header />
         {Group_key_arr.map((group, i) => (

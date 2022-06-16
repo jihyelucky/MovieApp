@@ -74,6 +74,7 @@ function Slide({ ytsApi }) {
                     summary={movie.summary}
                     title={movie.title}
                     year={movie.year}
+                    smallImage={movie.small_cover_image}
                   />
                 </SwiperSlide>
               );
