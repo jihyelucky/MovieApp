@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import styles from "./Loading.module.css";
 
 function Detail() {
   const { id } = useParams();
@@ -22,7 +23,14 @@ function Detail() {
   return (
     <div>
       {loading ? (
-        <h1>Loading...</h1>
+        <div className={styles.loading}>
+          <div className={styles.load}>
+            <p>Loading</p>
+            <div class="square-holder">
+              <div className={styles.square}></div>
+            </div>
+          </div>
+        </div>
       ) : (
         <div>
           {" "}

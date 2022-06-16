@@ -1,0 +1,125 @@
+/* common */
+html {
+    overflow-y: scroll;
+}
+
+body,
+html {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #333 !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 400;
+    font-size: 16px;
+    outline: 0;
+    -webkit-text-size-adjust: none;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: none
+}
+
+a:active,
+a:checked,
+a:focus,
+a:hover,
+a:visited {
+    text-decoration: none
+}
+
+ul>li>a:active,
+ul>li>a:checked,
+ul>li>a:focus,
+ul>li>a:hover,
+ul>li>a:visited {
+    text-decoration: none
+}
+
+table {
+    border-collapse: collapse
+}
+
+fieldset {
+    border: none
+}
+
+legend {
+    display: none
+}
+
+caption {
+    display: none
+}
+
+p,
+span,
+strong {
+    letter-spacing: -.5px
+}
+
+i {
+    display: inline-block
+}
+
+em {
+    font-style: normal;
+    letter-spacing: -1px
+}
+
+input {
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+
+input[type=text]::-ms-clear {
+    display: none
+}
+
+button {
+    box-sizing: border-box;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer
+}
+
+textarea {
+    box-sizing: border-box;
+    resize: none
+}
+
+select {
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #666;
+    font-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select::-ms-expand {
+    display: none
+}
