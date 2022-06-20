@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "../routes/Loading.module.css";
+import Load from "./Load";
 import Movie from "./Movie";
 
 // swiepr
@@ -25,14 +25,7 @@ function Slide({ ytsApi }) {
   return (
     <div>
       {loading ? (
-        <div className={styles.loading}>
-          <div className={styles.load}>
-            <p>Loading</p>
-            <div class="square-holder">
-              <div className={styles.square}></div>
-            </div>
-          </div>
-        </div>
+        <Load />
       ) : (
         <div>
           <Swiper

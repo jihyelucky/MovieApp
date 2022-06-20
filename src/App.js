@@ -16,6 +16,7 @@ function App() {
           path={`${process.env.PUBLIC_URL}/page/:group/:page`}
           element={<Group />}
         />
+        <Route path={`/page/:group/:page`} element={<Group />} />
       </Routes>
     </Router>
   );

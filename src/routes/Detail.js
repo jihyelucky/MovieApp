@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import styles from "./Loading.module.css";
+import { useNavigate, useParams } from "react-router-dom";
 import styles02 from "./Detail.module.css";
 import Header from "../components/Header";
+import Load from "../components/Load";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 function Detail() {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
   const [genres, setGenres] = useState([]);
+  const navigate = useNavigate();
   const getMovie = async () => {
     const json = await (
       await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
@@ -25,18 +28,17 @@ function Detail() {
   return (
     <div>
       {loading ? (
-        <div className={styles.loading}>
-          <div className={styles.load}>
-            <p>Loading</p>
-            <div class="square-holder">
-              <div className={styles.square}></div>
-            </div>
-          </div>
-        </div>
+        <Load />
       ) : (
         <div>
           <Header />
           <div className={styles02.bgItem}>
+            <div className={styles02.back}>
+              <FontAwesomeIcon
+                icon={faArrowLeft}
+                onClick={() => navigate(-1)}
+              />
+            </div>
             <img
               src={movies.background_image}
               alt={movies.title}
@@ -48,16 +50,19 @@ function Detail() {
                 <img src={movies.large_cover_image} alt={movies.title} />
               </div>
               <div className={styles02.movieCont}>
-                <p>runtime {movies.runtime}</p>
-                <ul>
+                <p>
+                  ⭐{movies.rating} &nbsp;&nbsp;&nbsp;&nbsp; ❤️
+                  {movies.like_count}
+                </p>
+                <p>🎬 {movies.runtime} Minutes</p>
+                <ul className={styles02.movieList}>
                   {genres.map((g) => (
-                    <li key={g}>{g}</li>
+                    <li key={g}>🔸{g}</li>
                   ))}
                 </ul>
-                <p>{movies.description_full}</p>
-                <p>rating: {movies.rating}</p>
-                <p>like: {movies.like_count}</p>
-                <p>download: {movies.download_count}</p>
+                <p className={styles02.content}>{movies.description_full}</p>
+
+                <p>⬇️ {movies.download_count}</p>
               </div>
             </div>
           </div>

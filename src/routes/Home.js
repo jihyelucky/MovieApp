@@ -7,17 +7,8 @@ import { Form } from "react-bootstrap";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-
+import { Group_obj, Group_key_arr } from "../components/Type";
 function Home() {
-  const Group_obj = {
-    "High Rating": "minimum_rating=8",
-    Animation: "genre=animation",
-    Romance: "genre=romance",
-    Comedy: "genre=comedy",
-    Thriller: "genre=thriller",
-  };
-  const Group_key_arr = Object.keys(Group_obj);
-
   const [moiveSearh, setMoiveSearh] = useState("");
   const OnMoiveSearh = (event) => {
     setMoiveSearh(event.target.value);

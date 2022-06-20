@@ -11,29 +11,37 @@ function SearchRoute({ moiveSearh }) {
       setMovies([]);
       fetch(`https://yts.mx/api/v2/list_movies.json?page=${i}&sort_by=rating`)
         .then((res) => res.json())
-        .then((json) => setMovies(json.data.movies))
+        .then((json) => setMovies(json.data.movies));
     }
-  }
+  };
 
   useEffect(() => {
     setMovArr([]);
     getMovies();
     return;
-  }, [moiveSearh])
-
+  }, [moiveSearh]);
 
   useEffect(() => {
     setMovArr(
-      (
-        [movArr,
-          ...[movies.filter((movie) => (movie.summary.toLowerCase().indexOf(moiveSearh.toLowerCase()) !== -1
-            || movie.title.toLowerCase().indexOf(moiveSearh.toLowerCase()) !== -1))]
-        ]
-      )
+      [
+        movArr,
+        ...[
+          movies.filter(
+            (movie) =>
+              movie.summary.toLowerCase().indexOf(moiveSearh.toLowerCase()) !==
+                -1 ||
+              movie.title.toLowerCase().indexOf(moiveSearh.toLowerCase()) !== -1
+          ),
+        ],
+      ]
         .flat()
         .map((movie, i, arr) => {
           for (let j = i + 1; j < arr.length; j++) {
-            if ((movie.id === arr[j].id) && arr[j] !== undefined && movie !== undefined) {
+            if (
+              movie.id === arr[j].id &&
+              arr[j] !== undefined &&
+              movie !== undefined
+            ) {
               // console.log(i, j);
               // console.log(movie.id, arr[j].id);
               arr.splice(j, 1);
@@ -42,7 +50,7 @@ function SearchRoute({ moiveSearh }) {
           }
           return movie;
         })
-        .sort((a, b) => b['rating'] - a['rating'])
+        .sort((a, b) => b["rating"] - a["rating"])
     );
   }, [movies]);
 

@@ -2,16 +2,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import style from "./Header.css";
+import { Group_obj, Group_key_arr } from "./Type";
 
 function Header() {
-  const Group_obj = {
-    "High Rating": "minimum_rating=8",
-    Animation: "genre=animation",
-    Romance: "genre=romance",
-    Comedy: "genre=comedy",
-    Thriller: "genre=thriller",
-  };
-  const Group_key_arr = Object.keys(Group_obj);
   return (
     <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
       <Container fluid>
@@ -25,9 +18,6 @@ function Header() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link>
-              <Link to={`${process.env.PUBLIC_URL}/`}>Home</Link>
-            </Nav.Link>
             {Group_key_arr.map((key) => {
               return (
                 <div key={key}>

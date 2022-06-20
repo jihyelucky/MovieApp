@@ -1,7 +1,7 @@
 .bgItem {
     position: relative;
     min-height: calc(100vh - 56px);
-    padding-top: 100px;
+    padding: 50px 0 100px;
 }
 
 .bgItem::after {
@@ -30,6 +30,7 @@
     z-index: 99;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     max-width: 1180px;
     margin: 0 auto;
 }
@@ -46,4 +47,57 @@
 .movieCont {
     padding-left: 50px;
     width: 50%;
+}
+
+.movieCont .movieList {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movieList li {
+    margin-right: 15px;
+    opacity: 0.7;
+}
+
+.content {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    margin: 30px 0;
+}
+
+.back {
+    position: relative;
+    z-index: 9;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+}
+
+.back svg {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.back svg:hover {
+    opacity: 0.7;
+}
+
+@media screen and (max-width: 769px) {
+    .moviePhoto {
+        width: 100%;
+    }
+
+    .moviePhoto img {
+        max-height: 300px;
+    }
+
+    .movieCont {
+        width: 100%;
+        margin-top: 20px;
+    }
 }
