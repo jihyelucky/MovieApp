@@ -9,7 +9,7 @@ function Header() {
     <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
       <Container fluid>
         <Navbar.Brand>
-          <a href={`${process.env.PUBLIC_URL}/`}>JIFLIX</a>
+          <a href={`${process.env.PUBLIC_URL}/`}>JI-FLIX</a>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
