@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'HSGyeoulNoonkott20';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HSGyeoulNoonkott20.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.navbar-brand a {
+    font-size: 25px;
+    color: tomato;
+    font-family: 'HSGyeoulNoonkott20';
+    line-height: 0;
+}
+
+.nav-link a {
+    transition: all 0.5s;
+}
+
+.nav-link a:hover {
+    color: #fff;
+}

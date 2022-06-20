@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Detail from "./routes/Detail";
 import Home from "./routes/Home";
+import Group from "./routes/Group";
 
 function App() {
   return (
@@ -10,6 +11,10 @@ function App() {
         <Route
           path={`${process.env.PUBLIC_URL}/movie/:id`}
           element={<Detail />}
+        />
+        <Route
+          path={`${process.env.PUBLIC_URL}/page/:group/:page`}
+          element={<Group />}
         />
       </Routes>
     </Router>
