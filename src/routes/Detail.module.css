@@ -71,6 +71,7 @@
     z-index: 9;
     max-width: 1200px;
     margin: 0 auto 30px;
+    width: 95%;
 }
 
 .back svg {
@@ -97,7 +98,9 @@
     }
 
     .movieCont {
-        width: 100%;
+        width: 95%;
+        margin: 0 auto;
         margin-top: 20px;
+        padding: 0;
     }
 }

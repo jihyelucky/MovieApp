@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Load from "../components/Load";
@@ -12,6 +13,8 @@ function Group() {
   const { group, page } = useParams();
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
+  const currentPage = window.location.pathname;
+
   const getMovies = async () => {
     const json = await (
       await fetch(
@@ -70,13 +73,20 @@ function Group() {
         <div className={styles.pagination}>
           {ListArray.map((list) => {
             return (
-              <Link key={list} to={`/page/${group}/${list}`}>
+              <Link
+                key={list}
+                to={`/page/${group}/${list}`}
+                className={
+                  currentPage === `/page/${group}/${list}` ? "active" : null
+                }
+              >
                 {list}
               </Link>
             );
           })}
         </div>
       )}
+      <Footer />
     </div>
   );
 }

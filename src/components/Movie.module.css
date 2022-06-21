@@ -112,6 +112,31 @@
     font-size: 16px;
 }
 
+
+/* swiepr */
+
+.prev svg {
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.next svg {
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
 @media screen and (max-width: 769px) {
     .title {
         font-size: 18px;
@@ -120,4 +145,15 @@
     .year {
         font-size: 15px;
     }
+
+    prev svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .next svg {
+        width: 35px;
+        height: 35px;
+    }
+
 }

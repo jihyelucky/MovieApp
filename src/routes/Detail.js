@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styles02 from "./Detail.module.css";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import Load from "../components/Load";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -66,6 +67,7 @@ function Detail() {
               </div>
             </div>
           </div>
+          <Footer />
         </div>
       )}
     </div>

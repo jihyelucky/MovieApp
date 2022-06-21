@@ -52,7 +52,9 @@
     color: tomato;
 }
 
-
+.active {
+    color: tomato;
+}
 
 @media screen and (max-width: 769px) {
     .SearchList li {

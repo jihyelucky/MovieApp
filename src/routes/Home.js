@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import Slide from "../components/Slide";
 import SearchRoute from "./SearchRoute";
 import styles02 from "./Home.module.css";
@@ -19,26 +20,26 @@ function Home() {
 
   return (
     <div className={styles02.wrap}>
-      <div>
-        <Header />
-        <Form className={styles02.search}>
-          <div className={styles02.input_box}>
-            <Form.Control
-              placeholder="Search The Title Or Summary"
-              className="me-2"
-              aria-label="Search"
-              value={moiveSearh}
-              onChange={OnMoiveSearh}
+      <Header />
+      <Form className={styles02.search}>
+        <div className={styles02.input_box}>
+          <Form.Control
+            placeholder="Search The Title Or Summary"
+            className="me-2"
+            aria-label="Search"
+            value={moiveSearh}
+            onChange={OnMoiveSearh}
+          />
+          {moiveSearh ? (
+            <FontAwesomeIcon
+              icon={faXmark}
+              className={styles02.input_box_close}
+              onClick={Delete}
             />
-            {moiveSearh ? (
-              <FontAwesomeIcon
-                icon={faXmark}
-                className={styles02.input_box_close}
-                onClick={Delete}
-              />
-            ) : null}
-          </div>
-        </Form>
+          ) : null}
+        </div>
+      </Form>
+      <div className={styles02.slideWrap}>
         {moiveSearh ? (
           <SearchRoute moiveSearh={moiveSearh}></SearchRoute>
         ) : (
@@ -52,6 +53,7 @@ function Home() {
           ))
         )}
       </div>
+      <Footer />
     </div>
   );
 }

@@ -5,7 +5,7 @@
     font-style: normal;
 }
 
-.wrap {
+.slideWrap {
     padding-bottom: 100px;
 }
 
@@ -87,4 +87,8 @@
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+}
+
+.sss {
+    background-color: red;
 }

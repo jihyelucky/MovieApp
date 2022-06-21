@@ -1,15 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Load from "./Load";
 import Movie from "./Movie";
+import style from "./Movie.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 // swiepr
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import { Navigation } from "swiper";
 
 function Slide({ ytsApi }) {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
+  const navigationNextRef = useRef(null);
+  const navigationPrevRef = useRef(null);
 
   const getMovies = async () => {
     const json = await (await fetch(ytsApi)).json();
@@ -31,16 +38,26 @@ function Slide({ ytsApi }) {
           <Swiper
             grabCursor={true}
             spaceBetween={20}
-            // onSlideChange={() => console.log("slide change")}
-            // onSwiper={(swiper) => console.log(swiper)}
+            navigation={{
+              prevEl: navigationPrevRef.current,
+              nextEl: navigationNextRef.current,
+            }}
+            onBeforeInit={(swiper) => {
+              swiper.params.navigation.prevEl = navigationPrevRef.current;
+              swiper.params.navigation.nextEl = navigationNextRef.current;
+            }}
+            modules={[Navigation]}
             breakpoints={{
               320: {
                 width: 320,
-                slidesPerView: 1.2,
+                slidesPerView: 1.3,
+                spaceBetween: 10,
+                centeredSlides: true,
               },
               480: {
                 width: 480,
                 slidesPerView: 2.2,
+                centeredSlides: false,
               },
               768: {
                 width: 768,
@@ -55,6 +72,8 @@ function Slide({ ytsApi }) {
                 slidesPerView: 5.2,
               },
             }}
+            // onSlideChange={() => console.log("slide change")}
+            // onSwiper={(swiper) => console.log(swiper)}
           >
             {movies.map((movie) => {
               return (
@@ -72,6 +91,12 @@ function Slide({ ytsApi }) {
                 </SwiperSlide>
               );
             })}
+            <div ref={navigationPrevRef} className={style.prev}>
+              <FontAwesomeIcon icon={faCircleChevronLeft} />
+            </div>
+            <div ref={navigationNextRef} className={style.next}>
+              <FontAwesomeIcon icon={faCircleChevronRight} />
+            </div>
           </Swiper>
         </div>
       )}

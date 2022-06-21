@@ -5,7 +5,6 @@
     font-style: normal;
 }
 
-
 .navbar-brand a {
     font-size: 25px;
     color: tomato;
@@ -19,5 +18,13 @@
 }
 
 .nav-link a:hover {
-    color: #fff;
+    color: tomato;
+}
+
+.active {
+    color: tomato;
+}
+
+.navbar-dark .navbar-toggler {
+    box-shadow: none !important;
 }
